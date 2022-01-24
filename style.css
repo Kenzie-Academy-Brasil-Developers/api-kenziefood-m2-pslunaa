@@ -1,0 +1,40 @@
+.categorias {
+    margin-top: 10px;
+    display: flex;
+    justify-content: left;
+    justify-content: space-around;
+    max-width: 600px;
+}
+
+.botaoNavTodos{
+    padding: 15px 11.5px;
+    border-radius: 30px;
+    border: white;
+    font-size: 14px;
+}
+
+.botaoNavTodos:hover {
+    cursor: pointer;
+    border: black 0.1px solid;
+}
+
+.botaoNav {
+    font-size: 14px;
+    border-radius: 30px;
+    padding: 11.5px 15px 11.5px 0px;
+    border: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.botaoNav:hover {
+    cursor: pointer;
+    border: black 0.1px solid;
+}
+
+.imagemNav {
+    margin: 0px 15px;
+    width: 19px;
+}
