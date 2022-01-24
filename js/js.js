@@ -9,7 +9,7 @@ function carrinhoVazio(){
         let ops = document.createElement('div')
         let mensagemCarrinhoVazio = document.createElement('section')
         let imgCarrinhoVazio = document.createElement('img')
-        imgCarrinhoVazio.src = "./shopping-bag.png"
+        imgCarrinhoVazio.src = "./Image/shopping-bag.png"
         ops.innerText = "Ops!"
         mensagemCarrinhoVazio.innerText = "Por enquanto não temos produtos no carrinho"
         mensagemTotal.appendChild(imgCarrinhoVazio)
