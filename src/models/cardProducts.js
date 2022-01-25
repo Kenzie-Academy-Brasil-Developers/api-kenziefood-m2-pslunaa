@@ -1,5 +1,7 @@
+const container = document.querySelector(".container")
+
 class CardProduto { //modelador de produtos na tela
-    constructor(id,nome,imagem,categoria,descricao,preco){
+    constructor({id,nome,imagem,categoria,descricao,preco}){
         this.id                =       id
         this.nome              =       nome;
         this.imagem            =       imagem;
@@ -8,7 +10,6 @@ class CardProduto { //modelador de produtos na tela
         this.preco             =       preco;
     }
     cardConstrutor(){ //construtor do card dos produtos
-        const main                      =       document.getElementById("ambiente-teste");
         let produtoBox                  =       document.createElement("div");
         produtoBox.id                   =        "produtoBox";
         produtoBox.classList.add('produtoBox');
@@ -50,25 +51,23 @@ class CardProduto { //modelador de produtos na tela
         produtoBox.appendChild(produtoDescricao);
         produtoBox.appendChild(produtoPreco);
         produtoBox.appendChild(addBtn);
-        main.appendChild(produtoBox);        
+        container.appendChild(produtoBox);        
     }
 }
 
 
 
 
-const calabresa = new CardProduto (25,'calabresa'
-,'https://i.pinimg.com/564x/2b/db/d4/2bdbd4b9a187d87baf00296db340dc82.jpg'
-,'Panificadora'
-,'Sobremesa fácil, rápida e muito saborosa: a mousse de morango leva apenas 5 ingredientes; confira como fazer a receita'
-,`R$ 19,50`
-)
+const calabresa = new CardProduto ({id: 25,
+    nome: 'calabresa',
+    imagem: 'https://i.pinimg.com/564x/2b/db/d4/2bdbd4b9a187d87baf00296db340dc82.jpg',
+    categoria: 'Panificadora',
+    descricao: 'Sobremesa fácil, rápida e muito saborosa: a mousse de morango leva apenas 5 ingredientes; confira como fazer a receita',
+    preco: `R$ 19,50`
+})
+
 calabresa.cardConstrutor();
-const queijo  = new CardProduto (25,'calabresa'
-,'https://i.pinimg.com/564x/2b/db/d4/2bdbd4b9a187d87baf00296db340dc82.jpg'
-,'Panificadora'
-,'Sobremesa fácil, rápida e muito saborosa: a mousse de morango leva apenas 5 ingredientes; confira como fazer a receita'
-,`R$ 19,50`
-)
-queijo.cardConstrutor();
+calabresa.cardConstrutor();
+calabresa.cardConstrutor();
+
 

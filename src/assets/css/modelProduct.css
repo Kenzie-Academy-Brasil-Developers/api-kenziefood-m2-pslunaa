@@ -26,7 +26,7 @@
     position:relative; 
     top:-35px; 
     left:10px;
-    font-family: Poppins;
+    font-family: "Poppins";
     font-size: 11px;
     font-style: normal;
     font-weight: 500;
@@ -35,22 +35,25 @@
     text-align: left;
 }
 .type_Panificadora{
-    background-image: url(../img/Icon_bread.png);
+    background-image: url("../imagens/Icon_bread.png");
     background-repeat: no-repeat;
     background-position: 20px;
+    background-size: 19px;
 }
 .type_Frutas{
-    background-image: url(../img/Icon_fruits.png);
+    background-image: url("../imagens/Icon_fruits.png");
     background-repeat: no-repeat;
     background-position: 20px;
+    background-size: 19px;
 }
 .type_Bebidas{
-    background-image: url(../img/Icon_glass\ of\ wine.png);
+    background-image: url("../imagens/Icon_glass\ of\ wine.png");
     background-repeat: no-repeat;
     background-position: 20px;
+    background-size: 19px;
 }
 .produtoNome{
-    font-family: Poppins;
+    font-family: "Poppins";
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -64,7 +67,7 @@
     left:0px;
 }
 .produtoDescricao{
-    font-family: Poppins;
+    font-family: "Poppins";
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -75,7 +78,7 @@
     left:0px;
 }
 .produtoPreco{
-    font-family: Poppins;
+    font-family: "Poppins";
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
@@ -95,5 +98,5 @@
     border-radius: 50%;
     border-style: none;
     background: #E4F7EF;
-    background-image: url(../img/Button\ Circle.png);
+    background-image: url("../imagens/Button\ Circle.png");
 }
