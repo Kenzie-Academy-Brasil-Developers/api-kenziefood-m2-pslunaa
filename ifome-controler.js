@@ -7,12 +7,12 @@ class KenzieFood {
         let data = await response.json()
         return data
     }
-    
+
 }
 
-// KenzieFood.get().then(data=>{
-//     console.log(data)
-// })
+KenzieFood.get().then(data=>{
+    console.log(data)
+})
 
 module.exports = KenzieFood
 
