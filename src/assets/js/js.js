@@ -2,42 +2,42 @@ const itens = document.getElementById('itens')
 const teste = document.getElementById('test')
 
 const itensNoCarrinho = [
-  {
-    id: 1,
-    nome: "Mousse de morango com a fruta",
-    preco: 27.5,
-    categoria: "Frutas",
-    descricao:
-      "Sobremesa fácil, rápida e muito saborosa: a mousse de morango leva apenas 5 ingredientes; confira como fazer a receita",
-    imagem:
-      "https://kenzie-academy-brasil.gitlab.io/fullstack/frontend/modulo2/sprint4/img/capstone-images/mousse.png",
-    createdAt: "2022-01-24T16:25:25.401Z",
-    updatedAt: "2022-01-24T16:25:25.401Z",
-  },
-  {
-    id: 1,
-    nome: "Mousse de morango com a fruta",
-    preco: 27.5,
-    categoria: "Frutas",
-    descricao:
-      "Sobremesa fácil, rápida e muito saborosa: a mousse de morango leva apenas 5 ingredientes; confira como fazer a receita",
-    imagem:
-      "https://kenzie-academy-brasil.gitlab.io/fullstack/frontend/modulo2/sprint4/img/capstone-images/mousse.png",
-    createdAt: "2022-01-24T16:25:25.401Z",
-    updatedAt: "2022-01-24T16:25:25.401Z",
-  },
-  {
-    id: 1,
-    nome: "Mousse de morango com a fruta",
-    preco: 27.5,
-    categoria: "Frutas",
-    descricao:
-      "Sobremesa fácil, rápida e muito saborosa: a mousse de morango leva apenas 5 ingredientes; confira como fazer a receita",
-    imagem:
-      "https://kenzie-academy-brasil.gitlab.io/fullstack/frontend/modulo2/sprint4/img/capstone-images/mousse.png",
-    createdAt: "2022-01-24T16:25:25.401Z",
-    updatedAt: "2022-01-24T16:25:25.401Z",
-  },
+  // {
+  //   id: 1,
+  //   nome: "Mousse de morango com a fruta",
+  //   preco: 27.5,
+  //   categoria: "Frutas",
+  //   descricao:
+  //     "Sobremesa fácil, rápida e muito saborosa: a mousse de morango leva apenas 5 ingredientes; confira como fazer a receita",
+  //   imagem:
+  //     "https://kenzie-academy-brasil.gitlab.io/fullstack/frontend/modulo2/sprint4/img/capstone-images/mousse.png",
+  //   createdAt: "2022-01-24T16:25:25.401Z",
+  //   updatedAt: "2022-01-24T16:25:25.401Z",
+  // },
+  // {
+  //   id: 1,
+  //   nome: "Mousse de morango com a fruta",
+  //   preco: 27.5,
+  //   categoria: "Frutas",
+  //   descricao:
+  //     "Sobremesa fácil, rápida e muito saborosa: a mousse de morango leva apenas 5 ingredientes; confira como fazer a receita",
+  //   imagem:
+  //     "https://kenzie-academy-brasil.gitlab.io/fullstack/frontend/modulo2/sprint4/img/capstone-images/mousse.png",
+  //   createdAt: "2022-01-24T16:25:25.401Z",
+  //   updatedAt: "2022-01-24T16:25:25.401Z",
+  // },
+  // {
+  //   id: 1,
+  //   nome: "Mousse de morango com a fruta",
+  //   preco: 27.5,
+  //   categoria: "Frutas",
+  //   descricao:
+  //     "Sobremesa fácil, rápida e muito saborosa: a mousse de morango leva apenas 5 ingredientes; confira como fazer a receita",
+  //   imagem:
+  //     "https://kenzie-academy-brasil.gitlab.io/fullstack/frontend/modulo2/sprint4/img/capstone-images/mousse.png",
+  //   createdAt: "2022-01-24T16:25:25.401Z",
+  //   updatedAt: "2022-01-24T16:25:25.401Z",
+  // },
 ];
 
 function ColocarItensNoCarrinhoDeCompra(){
@@ -82,7 +82,7 @@ function carrinhoVazio(){
         let ops = document.createElement('div')
         let mensagemCarrinhoVazio = document.createElement('section')
         let imgCarrinhoVazio = document.createElement('img')
-        imgCarrinhoVazio.src = "./Image/shopping-bag.png"
+        imgCarrinhoVazio.src = "./src/assets/imagens/shopping-bag.png"
         ops.innerText = "Ops!"
         mensagemCarrinhoVazio.innerText = "Por enquanto não temos produtos no carrinho"
         mensagemTotal.appendChild(imgCarrinhoVazio)
