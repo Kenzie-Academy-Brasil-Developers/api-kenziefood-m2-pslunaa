@@ -1,3 +1,11 @@
+import { KenzieFood } from "../controllers/ifome-controler.js";
+KenzieFood.getPublic().then(data => {
+for(let i = 0; i < data.length; i++){
+    let x = data[i];
+    let y = new CardProduto(x);
+    y.cardConstrutor();
+}
+});
 const container = document.querySelector(".container")
 
 class CardProduto { //modelador de produtos na tela
@@ -55,19 +63,5 @@ class CardProduto { //modelador de produtos na tela
     }
 }
 
-
-
-
-const calabresa = new CardProduto ({id: 25,
-    nome: 'calabresa',
-    imagem: 'https://i.pinimg.com/564x/2b/db/d4/2bdbd4b9a187d87baf00296db340dc82.jpg',
-    categoria: 'Panificadora',
-    descricao: 'Sobremesa fácil, rápida e muito saborosa: a mousse de morango leva apenas 5 ingredientes; confira como fazer a receita',
-    preco: `R$ 19,50`
-})
-
-calabresa.cardConstrutor();
-calabresa.cardConstrutor();
-calabresa.cardConstrutor();
 
 

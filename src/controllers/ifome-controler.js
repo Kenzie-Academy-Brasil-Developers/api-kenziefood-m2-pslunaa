@@ -16,9 +16,9 @@ class KenzieFood {
 
 }
 
-KenzieFood.get().then(data=>{
-    console.log(data)
-})
+// KenzieFood.get().then(data=>{
+//     console.log(data)
+// })
 
-module.exports = KenzieFood
+export{KenzieFood};
 
