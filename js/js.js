@@ -1,7 +1,43 @@
 const itens = document.getElementById('itens')
 const teste = document.getElementById('test')
 
-const itensNoCarrinho = []
+const itensNoCarrinho = [];
+
+function ColocarItensNoCarrinhoDeCompra(){
+    itens.innerHTML = "";
+    for (let i = 0; i < itensNoCarrinho.length; i++) {
+      const itensParaComprar = document.createElement("div");
+
+      const imagemDaComida = document.createElement("img");
+      imagemDaComida.src = itensNoCarrinho[i].imagem;
+      imagemDaComida.classList.add("tamanhoDosProdutos");
+
+      const divisao = document.createElement("section");
+
+      const nomeDaComida = document.createElement("h2");
+      nomeDaComida.innerText = itensNoCarrinho[i].nome;
+
+      const categoriaComida = document.createElement("h3");
+      categoriaComida.innerText = itensNoCarrinho[i].categoria;
+
+      const precoComida = document.createElement("p");
+      precoComida.innerText = `R$ ${itensNoCarrinho[i].preco.toFixed(2)}`.replace(".",",");
+
+      divisao.appendChild(nomeDaComida);
+      divisao.appendChild(categoriaComida);
+      divisao.appendChild(precoComida);
+      divisao.classList.add("textosNoCarrinho");
+
+      itensParaComprar.appendChild(imagemDaComida);
+      itensParaComprar.appendChild(divisao);
+      itensParaComprar.classList.add("itensParaComprarStyle");
+
+      itens.appendChild(itensParaComprar);
+    }
+}
+
+teste.addEventListener("click", ColocarItensNoCarrinhoDeCompra);
+
 
 function carrinhoVazio(){
     if(itensNoCarrinho.length === 0){
@@ -22,11 +58,3 @@ function carrinhoVazio(){
 
 carrinhoVazio()
 
-teste.addEventListener("click", function(){
-    const mensagemCarrinhoVazio2 = document.createElement("div");
-    itens.innerHTML = "";    
-    if (itensNoCarrinho.length !== 0) {
-      mensagemCarrinhoVazio2.innerText = "tem 1 item no carrinho";
-      itens.appendChild(mensagemCarrinhoVazio2);
-    }
-})
