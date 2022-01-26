@@ -1,3 +1,5 @@
+import { KenzieFood } from "../../controllers/ifome-controler.js";
+
 const itens = document.getElementById('itens')
 const teste = document.getElementById('test')
 
@@ -73,7 +75,7 @@ function ColocarItensNoCarrinhoDeCompra(){
     }
 }
 
-teste.addEventListener("click", ColocarItensNoCarrinhoDeCompra);
+// teste.addEventListener("click", ColocarItensNoCarrinhoDeCompra);
 
 
 function carrinhoVazio(){

@@ -1,11 +1,80 @@
 import { KenzieFood } from "../controllers/ifome-controler.js";
-KenzieFood.getPublic().then(data => {
-for(let i = 0; i < data.length; i++){
-    let x = data[i];
-    let y = new CardProduto(x);
-    y.cardConstrutor();
+
+// --- Variaveis Globais --- //
+
+let valor = document.getElementById("campoPesquisa")
+let array = []
+
+valor.addEventListener("keyup", pesquisarProduto)
+
+// --- Filtro de Categoria --- //
+
+const menuNavegacao = document.querySelector(".categorias")
+menuNavegacao.addEventListener("click", interceptadorMenuNavegacao)
+
+function interceptadorMenuNavegacao(evento){
+    console.log(evento)
+    const ancora = evento.target
+        if(ancora.tagName === "BUTTON"){
+            if(ancora.innerText === "Todos"){
+                const container = document.querySelector(".container")
+                container.innerHTML = ""
+                KenzieFood.getPublic().then(data => {
+                    for(let i = 0; i < data.length; i++){
+                        let valor = data[i];
+                        let y = new CardProduto(valor);
+                        y.cardConstrutor();
+                    }
+              });
+            } else {
+            KenzieFood.getPublic().then(data => {
+                const container = document.querySelector(".container")
+                container.innerHTML = ""
+                array = data.filter((item) => {
+                    return ((item.categoria).toLowerCase().indexOf(evento.target.innerText.toLowerCase()) > -1)
+                });
+                for(let i = 0; i < array.length; i++){
+                    let valor = array[i];
+                    let y = new CardProduto(valor);
+                    y.cardConstrutor();
+                }    
+            }   
+        )}
+    }
 }
+
+// --- //
+
+
+// Criação e Pesquisa no Input (Busca foi acrescentada) //
+function pesquisarProduto() {
+
+const container = document.querySelector(".container")
+container.innerHTML = ""
+
+    KenzieFood.getPublic().then(data => {
+      if(valor.value != ""){
+          array = data.filter((item) => {
+              return ((item.nome).toLowerCase().indexOf(valor.value.toLowerCase()) > -1 || (item.categoria).toLowerCase().indexOf(valor.value.toLowerCase()) > -1) && item.nome
+          });
+        //   console.log(array)
+          for(let i = 0; i < array.length; i++){
+              let valor = array[i];
+              let y = new CardProduto(valor);
+              y.cardConstrutor();
+          }
+  } else {
+      for(let i = 0; i < data.length; i++){
+          let valor = data[i];
+          let y = new CardProduto(valor);
+          y.cardConstrutor();
+      }
+  }
 });
+}
+
+// --- //
+
 const container = document.querySelector(".container")
 
 class CardProduto { //modelador de produtos na tela
@@ -63,5 +132,6 @@ class CardProduto { //modelador de produtos na tela
     }
 }
 
+pesquisarProduto()
 
-
+export{CardProduto};
