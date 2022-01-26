@@ -110,6 +110,8 @@ header {
 
 .carrinho {
     margin-bottom: 74px;
+    overflow-y: scroll;
+    height: 460px;
 }
 
 .separarNoCarrinho {
@@ -231,6 +233,11 @@ h3 {
     justify-content: center;
 }
 
+.excluir{
+    background-image: url("../imagens/trash.png");
+    width: 9px;
+    height: 12px;
+}
 
 @media (min-width: 768px) {
 
@@ -239,6 +246,7 @@ h3 {
     width: 345px;
     height: 503.48px;
     margin-left: 73px;
+    height: auto;
 }
 
     .container{

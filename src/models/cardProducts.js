@@ -1,14 +1,20 @@
 import { KenzieFood } from "../controllers/ifome-controler.js";
 
+const itensNoCarrinho = [];
+
 KenzieFood.getPublic().then(data => {
     
-for(let i = 0; i < data.length; i++){
-    let x = data[i];
-    let y = new CardProduto(x);
-    y.cardConstrutor();
-    const botao = document.getElementsByClassName("addBtn")
-}
+    for(let i = 0; i < data.length; i++){
+        let x = data[i];
+        let y = new CardProduto(x);
+        y.cardConstrutor();
+        const botao = document.getElementsByClassName("addBtn")[i]
+        botao.addEventListener("click", () => {
+        itensNoCarrinho.push(data[i])
+        ColocarItensNoCarrinhoDeCompra()        
 });
+}
+})
 
 const container = document.querySelector(".container")
 
@@ -53,7 +59,6 @@ class CardProduto { //modelador de produtos na tela
         produtoPreco.classList.add("produtoPreco");
 
         let addBtn                      =       document.createElement("button");
-        // addBtn.id                       =       "addBtn";
         addBtn.classList.add("addBtn");
         
 
@@ -67,6 +72,87 @@ class CardProduto { //modelador de produtos na tela
     }
 }
 
-function teste(){
-    console.log(`teste ${this.id}`)
+function ColocarItensNoCarrinhoDeCompra() {
+  itens.innerHTML = "";
+  for (let i = 0; i < itensNoCarrinho.length; i++) {
+    const itensParaComprar = document.createElement("div");
+
+    const imagemDaComida = document.createElement("img");
+    imagemDaComida.src = itensNoCarrinho[i].imagem;
+    imagemDaComida.classList.add("tamanhoDosProdutos");
+
+    const BoExcluir = document.createElement("button");
+    BoExcluir.classList.add('excluir')
+    
+    BoExcluir.addEventListener("click", (evt) => {
+        let x = evt.target.parentElement
+        x.remove()
+        console.log(itensNoCarrinho[2].id)
+        console.log(x)
+        carrinhoVazio()
+        for(let i = 0; i < itensNoCarrinho.length; i++){ 
+            if(itensNoCarrinho[i] === x){
+                console.log("oi")
+            }
+        }
+    })
+
+    const divisao = document.createElement("section");
+
+    const nomeDaComida = document.createElement("h2");
+    nomeDaComida.innerText = itensNoCarrinho[i].nome;
+
+    const categoriaComida = document.createElement("h3");
+    categoriaComida.innerText = itensNoCarrinho[i].categoria;
+
+    const precoComida = document.createElement("p");
+    precoComida.innerText = `R$ ${itensNoCarrinho[i].preco.toFixed(2)}`.replace(
+      ".",
+      ","
+    );
+
+    divisao.appendChild(nomeDaComida);
+    divisao.appendChild(categoriaComida);
+    divisao.appendChild(precoComida);
+    divisao.classList.add("textosNoCarrinho");
+
+    itensParaComprar.appendChild(imagemDaComida);
+    itensParaComprar.appendChild(divisao);
+    itensParaComprar.appendChild(BoExcluir)
+    itensParaComprar.classList.add("itensParaComprarStyle");
+
+    itens.appendChild(itensParaComprar);
+  }
 }
+
+// function retirarItensDoCarrinho(){
+    // itensNoCarrinho.forEach((e, a) => {
+    //   const botaoExcluidor = document.getElementById("excluir")[i];
+    //   console.log(e);
+    //   console.log(botaoExcluidor);
+    // });
+// })
+// }
+
+
+const itens = document.getElementById("itens");
+
+function carrinhoVazio() {
+  if (itensNoCarrinho.length === 0) {
+    let mensagemTotal = document.createElement("div");
+    let ops = document.createElement("div");
+    let mensagemCarrinhoVazio = document.createElement("section");
+    let imgCarrinhoVazio = document.createElement("img");
+    imgCarrinhoVazio.src = "./src/assets/imagens/shopping-bag.png";
+    ops.innerText = "Ops!";
+    mensagemCarrinhoVazio.innerText =
+      "Por enquanto não temos produtos no carrinho";
+    mensagemTotal.appendChild(imgCarrinhoVazio);
+    mensagemTotal.appendChild(ops);
+    mensagemTotal.appendChild(mensagemCarrinhoVazio);
+    mensagemTotal.classList.add("styleCarrinhoVazio");
+    itens.appendChild(mensagemTotal);
+  }
+}
+
+carrinhoVazio()
