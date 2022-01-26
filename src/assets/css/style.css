@@ -48,6 +48,14 @@ header {
     cursor: pointer;
 }
 
+#pesquisar:hover{
+    background-color: #FF2253;
+}
+
+#pesquisar:hover #lupa {
+    filter: invert(1%) sepia(1%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(80%);
+}
+
 .categorias {
     padding-bottom: 27px;
     margin-left: 18px;

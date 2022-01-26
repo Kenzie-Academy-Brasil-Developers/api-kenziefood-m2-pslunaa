@@ -1,76 +1,152 @@
 import { KenzieFood } from "../controllers/ifome-controler.js";
 
 const itensNoCarrinho = [];
+const salvaProdutos = [];
 
-//TESTANDO O ARQUIVO
+//Consumindo API e salvando itens num array;
 
 KenzieFood.getPublic().then(data => {
-    
     for(let i = 0; i < data.length; i++){
-        let x = data[i];
-        let y = new CardProduto(x);
-        y.cardConstrutor();
+        salvaProdutos.push(data[i])
+        let criaProduto = new CardProduto(data[i]);
+        criaProduto.cardConstrutor();
         const botao = document.getElementsByClassName("addBtn")[i]
         botao.addEventListener("click", () => {
         itensNoCarrinho.push(data[i])
-        ColocarItensNoCarrinhoDeCompra()        
-});
-}
+        ColocarItensNoCarrinhoDeCompra()       
+        });
+    }
 })
+
+//Variaveis Globais
+let termo = document.getElementById("campoPesquisa")
+termo.addEventListener("keyup", pesquisarProduto)
+
+//Filtro de Categoria
+
+const menuNavegacao = document.querySelector(".categorias")
+menuNavegacao.addEventListener("click", interceptadorMenuNavegacao)
+
+function interceptadorMenuNavegacao(evento){
+    const ancora = evento.target
+    if(ancora.tagName === "BUTTON"){
+        if(ancora.innerText === "Todos"){
+            const container = document.querySelector(".container")
+            container.innerHTML = ""
+            for(let i = 0; i < salvaProdutos.length; i++){
+                let criandoProduto = new CardProduto(salvaProdutos[i]);
+                criandoProduto.cardConstrutor();
+                const botao = document.getElementsByClassName("addBtn")[i]
+                botao.addEventListener("click", () => {
+                itensNoCarrinho.push(criandoProduto)
+                ColocarItensNoCarrinhoDeCompra()        
+                });
+            }     
+        }else{
+            const container = document.querySelector(".container")
+            container.innerHTML = ""
+            let vitrineFiltrada = salvaProdutos.filter((item) => {
+                return ((item.categoria).toLowerCase().indexOf(evento.target.innerText.toLowerCase()) > -1)
+                });
+            for(let i = 0; i < vitrineFiltrada.length; i++){
+                let criandoProduto = new CardProduto(vitrineFiltrada[i]);
+                criandoProduto.cardConstrutor();
+                const botao = document.getElementsByClassName("addBtn")[i]
+                botao.addEventListener("click", () => {
+                    itensNoCarrinho.push(criandoProduto)
+                    ColocarItensNoCarrinhoDeCompra()        
+                });
+            }    
+        }   
+    }
+}
+
+// Filtro campo de pesquisa
+
+function pesquisarProduto() {
+    const container = document.querySelector(".container")
+    container.innerHTML = ""
+    let vitrineFiltrada = salvaProdutos.filter((item) => {
+        return ((item.nome).toLowerCase().indexOf(termo.value.toLowerCase()) > -1 || (item.categoria).toLowerCase().indexOf(termo.value.toLowerCase()) > -1) && item.nome
+    });
+
+    if(termo.value != ""){          
+        for(let i = 0; i < vitrineFiltrada.length; i++){
+            let criandoProduto = new CardProduto(vitrineFiltrada[i]);
+            criandoProduto.cardConstrutor();
+            const botao = document.getElementsByClassName("addBtn")[i]
+            botao.addEventListener("click", () => {
+            itensNoCarrinho.push(criandoProduto)
+            ColocarItensNoCarrinhoDeCompra()        
+            });
+        }
+    }else{
+        for(let i = 0; i < vitrineFiltrada.length; i++){
+            let criandoProduto = new CardProduto(vitrineFiltrada[i]);
+            criandoProduto.cardConstrutor();
+            const botao = document.getElementsByClassName("addBtn")[i]
+                botao.addEventListener("click", () => {
+                itensNoCarrinho.push(criandoProduto)
+                ColocarItensNoCarrinhoDeCompra()        
+                });
+        }
+    }
+}
+
+//Template de produtos (Já faz o append no HTML);
 
 const container = document.querySelector(".container")
 
-class CardProduto { //modelador de produtos na tela
+class CardProduto { 
     constructor({id,nome,imagem,categoria,descricao,preco}){
-        this.id                =       id
-        this.nome              =       nome;
-        this.imagem            =       imagem;
-        this.categoria         =       categoria;
-        this.descricao         =       descricao;
-        this.preco             =       preco;
+        this.id        = id;
+        this.nome      = nome;
+        this.imagem    = imagem;
+        this.categoria = categoria;
+        this.descricao = descricao;
+        this.preco     = preco;
     }
-    cardConstrutor(){ //construtor do card dos produtos
-        let produtoBox                  =       document.createElement("div");
-        produtoBox.id                   =        "produtoBox";
+
+    cardConstrutor(){
+        let produtoBox = document.createElement("div");
+        produtoBox.id  = "produtoBox";
         produtoBox.classList.add('produtoBox');
 
-        let imgBox                      =       document.createElement("img");
-        imgBox.id                       =       "pizza";
-        imgBox.src                      =       this.imagem;
+        let imgBox = document.createElement("img");
+        imgBox.id  = "pizza";
+        imgBox.src = this.imagem;
         imgBox.classList.add('imgBox');
 
-        let produtoType                 =       document.createElement("div");
-        produtoType.id                  =       `type_${this.categoria}`
-        produtoType.innerText           =       `${this.categoria}`;
+        let produtoType       = document.createElement("div");
+        produtoType.id        = `type_${this.categoria}`
+        produtoType.innerText = `${this.categoria}`;
         produtoType.classList.add(`type_${this.categoria}`);
         
-        let produtoNome                 =       document.createElement("h2");
-        produtoNome.id                  =       "produtoNome";
-        produtoNome.innerText           =       `${this.nome}`;
+        let produtoNome       = document.createElement("h2");
+        produtoNome.id        = "produtoNome";
+        produtoNome.innerText = `${this.nome}`;
         produtoNome.classList.add("produtoNome");
         
-
-        let produtoDescricao            =       document.createElement("h2");
-        produtoDescricao.id             =       "produtoDescricao"
-        produtoDescricao.innerText      =       `${this.descricao}`;
+        let produtoDescricao       = document.createElement("h2");
+        produtoDescricao.id        = "produtoDescricao"
+        produtoDescricao.innerText = `${this.descricao}`;
         produtoDescricao.classList.add("produtoDescricao");
 
-        let produtoPreco                =       document.createElement("h2");
-        produtoPreco.id                 =       "produtoPreco";
-        produtoPreco.innerText          =       `${this.preco}`;
+        let produtoPreco       = document.createElement("h2");
+        produtoPreco.id        = "produtoPreco";
+        produtoPreco.innerText = `${this.preco}`;
         produtoPreco.classList.add("produtoPreco");
 
-        let addBtn                      =       document.createElement("button");
+        let addBtn = document.createElement("button");
         addBtn.classList.add("addBtn");
         
-
         produtoBox.appendChild(imgBox);
         produtoBox.appendChild(produtoType);
         produtoBox.appendChild(produtoNome);
         produtoBox.appendChild(produtoDescricao);
         produtoBox.appendChild(produtoPreco);
         produtoBox.appendChild(addBtn);
-        container.appendChild(produtoBox);        
+        container.appendChild(produtoBox);    
     }
 }
 
@@ -166,3 +242,6 @@ function carrinhoVazio() {
 }
 
 carrinhoVazio()
+// pesquisarProduto()
+
+export{CardProduto};
