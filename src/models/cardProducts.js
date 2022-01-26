@@ -18,6 +18,8 @@ KenzieFood.getPublic().then(data => {
     }
 })
 
+
+
 //Variaveis Globais
 let termo = document.getElementById("campoPesquisa")
 termo.addEventListener("keyup", pesquisarProduto)
@@ -243,5 +245,6 @@ function carrinhoVazio() {
 
 carrinhoVazio()
 // pesquisarProduto()
+
 
 export{CardProduto};
