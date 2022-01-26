@@ -3,7 +3,6 @@
 .produtoBox{
     height: 369px;
     width: 300px;
-    margin-bottom: 155px;
 }
 .imgBox{
     height: 194px;
@@ -99,4 +98,10 @@
     border-style: none;
     background: #E4F7EF;
     background-image: url("../imagens/Button\ Circle.png");
+}
+
+@media (min-width: 768px) {
+    .produtoBox {
+        margin-bottom: 90px;
+    }
 }

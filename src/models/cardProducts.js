@@ -63,5 +63,3 @@ class CardProduto { //modelador de produtos na tela
     }
 }
 
-
-

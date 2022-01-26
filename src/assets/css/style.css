@@ -49,6 +49,7 @@ header {
 }
 
 .categorias {
+    padding-bottom: 27px;
     margin-left: 18px;
     margin-top: 10px;
     display: flex;
@@ -108,9 +109,7 @@ header {
 }
 
 .carrinho {
-    margin: 20px 20px; /* RETIRAR DEPOIS */
-    width: 345px;
-    height: 503.48px;
+    margin-bottom: 74px;
 }
 
 .separarNoCarrinho {
@@ -220,7 +219,41 @@ h3 {
     margin-top: 7.88px;
 }
 
+.container {
+    display: flex;
+    overflow-x: scroll;
+    height: 400px;
+    margin-left: 16px;
+}
+
+.carrinhoMobile{
+    display: flex;
+    justify-content: center;
+}
+
+
 @media (min-width: 768px) {
+
+    .carrinho {
+    padding-top: 58px;
+    width: 345px;
+    height: 503.48px;
+    padding-right: 155px;
+    }
+
+    .container{
+        overflow-x: hidden;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        height: auto;
+        width: 1166px;
+
+    }
+
+    main {
+        padding-left: 116px;
+        display: flex;
+    }
 
     header{
         display: flex;
@@ -255,6 +288,7 @@ h3 {
 
 @media (min-width: 600px) {
     .categorias {
+        padding-bottom: 58px;
         overflow-x: hidden;
     }
 }
