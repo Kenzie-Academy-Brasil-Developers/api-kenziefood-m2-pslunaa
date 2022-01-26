@@ -13,7 +13,8 @@ KenzieFood.getPublic().then(data => {
         const botao = document.getElementsByClassName("addBtn")[i]
         botao.addEventListener("click", () => {
         itensNoCarrinho.push(data[i])
-        ColocarItensNoCarrinhoDeCompra()        
+        ColocarItensNoCarrinhoDeCompra()    
+        console.log(itensNoCarrinho)    
 });
 }
 })
@@ -74,6 +75,19 @@ class CardProduto { //modelador de produtos na tela
     }
 }
 
+function getMaxID(){
+    let maxId = 0;
+    itensNoCarrinho.forEach((e) => {
+        if(e.nome.id > maxId){
+            maxId = e.nome.id
+        }
+    })
+    return maxId
+}
+
+const sorte = getMaxID()
+console.log(sorte)
+
 function ColocarItensNoCarrinhoDeCompra() {
   itens.innerHTML = "";
 
@@ -84,6 +98,10 @@ function ColocarItensNoCarrinhoDeCompra() {
     const imagemDaComida = document.createElement("img");
     imagemDaComida.src = itensNoCarrinho[i].imagem;
     imagemDaComida.classList.add("tamanhoDosProdutos");
+
+    const nomeDaComida = document.createElement("h2");
+    nomeDaComida.innerText = itensNoCarrinho[i].nome;
+    nomeDaComida.id = getMaxID() + 1
 
     const imgExcluir = document.createElement('img')
     imgExcluir.src = './src/assets/imagens/trash.png'
@@ -98,9 +116,9 @@ function ColocarItensNoCarrinhoDeCompra() {
       let x = evt.target
       if(x.tagName === "BUTTON"){
         let y = x.parentNode
-        let filhodox = y.childNodes[1].childNodes[0].innerText
+        let filhodox = y.childNodes[1].childNodes[0].id
         
-        let index = itensNoCarrinho.indexOf(itensNoCarrinho.find(e => e.nome === filhodox))
+        let index = itensNoCarrinho.indexOf(itensNoCarrinho.find(e => e.nome.id === filhodox))
         itensNoCarrinho.splice(index, 1)
         ColocarItensNoCarrinhoDeCompra()
         carrinhoVazio()
@@ -119,8 +137,7 @@ function ColocarItensNoCarrinhoDeCompra() {
 
     const divisao = document.createElement("section");
 
-    const nomeDaComida = document.createElement("h2");
-    nomeDaComida.innerText = itensNoCarrinho[i].nome;
+    
 
     const categoriaComida = document.createElement("h3");
     categoriaComida.innerText = itensNoCarrinho[i].categoria;
