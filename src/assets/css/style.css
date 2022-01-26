@@ -238,20 +238,20 @@ h3 {
     padding-top: 58px;
     width: 345px;
     height: 503.48px;
-    padding-right: 155px;
-    }
+    margin-left: 73px;
+}
 
     .container{
         overflow-x: hidden;
         display: grid;
         grid-template-columns: auto auto auto;
         height: auto;
-        width: 1166px;
+        width: 977px;
 
     }
 
     main {
-        padding-left: 116px;
+        justify-content: center;
         display: flex;
     }
 
