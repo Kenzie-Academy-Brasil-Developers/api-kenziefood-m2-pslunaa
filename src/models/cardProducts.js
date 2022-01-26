@@ -2,6 +2,8 @@ import { KenzieFood } from "../controllers/ifome-controler.js";
 
 const itensNoCarrinho = [];
 
+//TESTANDO O ARQUIVO
+
 KenzieFood.getPublic().then(data => {
     
     for(let i = 0; i < data.length; i++){
@@ -74,27 +76,45 @@ class CardProduto { //modelador de produtos na tela
 
 function ColocarItensNoCarrinhoDeCompra() {
   itens.innerHTML = "";
+
   for (let i = 0; i < itensNoCarrinho.length; i++) {
     const itensParaComprar = document.createElement("div");
+    itensParaComprar.id = itensNoCarrinho[i].id
 
     const imagemDaComida = document.createElement("img");
     imagemDaComida.src = itensNoCarrinho[i].imagem;
     imagemDaComida.classList.add("tamanhoDosProdutos");
 
+    const imgExcluir = document.createElement('img')
+    imgExcluir.src = './src/assets/imagens/trash.png'
+    imgExcluir.classList.add('imgExcluir')
+
     const BoExcluir = document.createElement("button");
     BoExcluir.classList.add('excluir')
     
+    BoExcluir.appendChild(imgExcluir)
+
     BoExcluir.addEventListener("click", (evt) => {
-        let x = evt.target.parentElement
-        x.remove()
-        console.log(itensNoCarrinho[2].id)
-        console.log(x)
+      let x = evt.target
+      if(x.tagName === "BUTTON"){
+        let y = x.parentNode
+        let filhodox = y.childNodes[1].childNodes[0].innerText
+        
+        let index = itensNoCarrinho.indexOf(itensNoCarrinho.find(e => e.nome === filhodox))
+        itensNoCarrinho.splice(index, 1)
+        ColocarItensNoCarrinhoDeCompra()
         carrinhoVazio()
-        for(let i = 0; i < itensNoCarrinho.length; i++){ 
-            if(itensNoCarrinho[i] === x){
-                console.log("oi")
-            }
-        }
+      } else {
+        let x = evt.target.parentNode.parentNode
+        let filhodox = x.childNodes[1].childNodes[0].innerText;
+
+        let index = itensNoCarrinho.indexOf(
+          itensNoCarrinho.find((e) => e.nome === filhodox)
+        );
+        itensNoCarrinho.splice(index, 1);
+        ColocarItensNoCarrinhoDeCompra();
+        carrinhoVazio();
+      }
     })
 
     const divisao = document.createElement("section");
