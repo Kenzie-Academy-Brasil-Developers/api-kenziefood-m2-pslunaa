@@ -2,8 +2,6 @@ import { KenzieFood } from "../controllers/ifome-controler.js";
 
 const itensNoCarrinho = [];
 
-//TESTANDO O ARQUIVO
-
 KenzieFood.getPublic().then(data => {
     
     for(let i = 0; i < data.length; i++){
@@ -76,7 +74,7 @@ class CardProduto { //modelador de produtos na tela
 }
 
 function getMaxID(){
-    let maxId = 0;
+    let maxId = 1;
     itensNoCarrinho.forEach((e) => {
         if(e.nome.id > maxId){
             maxId = e.nome.id
@@ -127,7 +125,7 @@ function ColocarItensNoCarrinhoDeCompra() {
         let filhodox = x.childNodes[1].childNodes[0].innerText;
 
         let index = itensNoCarrinho.indexOf(
-          itensNoCarrinho.find((e) => e.nome === filhodox)
+          itensNoCarrinho.find((e) => e.nome.id === filhodox)
         );
         itensNoCarrinho.splice(index, 1);
         ColocarItensNoCarrinhoDeCompra();
