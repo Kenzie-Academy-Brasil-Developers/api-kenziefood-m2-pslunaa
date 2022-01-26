@@ -102,6 +102,7 @@
     border-style: none;
     background: #E4F7EF;
     background-image: url("../imagens/Button\ Circle.png");
+    cursor: pointer;
 }
 .addBtn:hover{
     background-image: url("../imagens/Property\ 1=Hover.png");
