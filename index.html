@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenzie Food</title>
+    <link rel="stylesheet" href="./src/assets/css/resset.css">
+    <link rel="stylesheet" href="./src/assets/css/style.css">
+    <link rel="stylesheet" href="./src/assets/css/modelProduct.css">
+    <link rel="stylesheet" href="./src/assets/css/countArea.css">
+</head>
+
+<body>
+    <header>
+
+        <div id="logo">
+            <img id="nome-logo" src="./src/assets/imagens/Group 1030.png" alt="Logo-Food1">
+        </div>
+    
+        <div id="campo-pesquisa">
+            <input id="campoPesquisa" type="text" placeholder="Pesquisar por produto">
+            <button id="pesquisar"> <img id="lupa" src="./src/assets/imagens/Text.png" alt="lupa"> </button>
+        </div>
+    
+    </header>
+
+    <main>
+        <div>
+            <nav class="categorias">
+                <button class="botaoNavTodos">Todos</button>
+                <button id="botaoNav1" class="botaoNav"><img class="imagemNav" src="./src/assets/imagens/Icon_bread.png" alt="">Panificadora</button>
+                <button id="botaoNav2" class="botaoNav"><img class="imagemNav" src="./src/assets/imagens/Icon_fruits.png" alt="">Frutas</button>
+                <button id="botaoNav3" class="botaoNav"><img class="imagemNav" src="./src/assets/imagens/Icon_glass of wine.png" alt="">Bebidas</button>
+            </nav>
+            
+            <section class="container">
+                <button id="test">TESTANDO</button>
+            </section>
+        </div>
+
+        <div class="carrinho">
+            <div class="carrinhoParteSuperior"><img src="./src/assets/imagens/.png" alt=""><title1>Carrinho</title1></div>
+            <div class="itens" id="itens"></div>
+            <div class="count" id="count">
+                <div class="quantidade" id="quantidade">
+                    <h4>Quantidade</h4>
+                </div>
+                <div class="preco" id="preco">
+                    <h4>Total</h4>
+                </div>
+            </div>
+            
+
+        </div>
+    </main>
+    <footer id="footerTest">
+
+    </footer>
+    <script type="module" src="./src/controllers/ifome-priceCount-itensCount.js"></script>
+    <script type="module" src="./src/controllers/ifome-controler.js"></script>
+    <script type="module" src="./src/assets/js/js.js"></script>
+    <script type="module" src="./src/models/cardProducts.js"></script>
+    
+</body>
+</html>
