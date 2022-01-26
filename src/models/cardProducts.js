@@ -125,16 +125,6 @@ function ColocarItensNoCarrinhoDeCompra() {
   }
 }
 
-// function retirarItensDoCarrinho(){
-    // itensNoCarrinho.forEach((e, a) => {
-    //   const botaoExcluidor = document.getElementById("excluir")[i];
-    //   console.log(e);
-    //   console.log(botaoExcluidor);
-    // });
-// })
-// }
-
-
 const itens = document.getElementById("itens");
 
 function carrinhoVazio() {
