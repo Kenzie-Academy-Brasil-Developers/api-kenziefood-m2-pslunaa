@@ -1,11 +1,17 @@
 import { KenzieFood } from "../controllers/ifome-controler.js";
+
 KenzieFood.getPublic().then(data => {
 for(let i = 0; i < data.length; i++){
     let x = data[i];
     let y = new CardProduto(x);
     y.cardConstrutor();
+
+    const botao = document.getElementsByClassName("addBtn")[i];
+    botao.id = i;
+    botao.addEventListener("click", testando);
 }
 });
+
 const container = document.querySelector(".container")
 
 class CardProduto { //modelador de produtos na tela
@@ -49,7 +55,7 @@ class CardProduto { //modelador de produtos na tela
         produtoPreco.classList.add("produtoPreco");
 
         let addBtn                      =       document.createElement("button");
-        addBtn.id                       =       "addBtn";
+        // addBtn.id                       =       "addBtn";
         addBtn.classList.add("addBtn");
         
 
@@ -63,3 +69,6 @@ class CardProduto { //modelador de produtos na tela
     }
 }
 
+function testando(){
+    console.log(`teste ${this.id}`);
+}
