@@ -2,6 +2,8 @@ import { KenzieFood } from "../controllers/ifome-controler.js";
 
 const itensNoCarrinho = [];
 
+//TESTANDO O ARQUIVO
+
 KenzieFood.getPublic().then(data => {
     
     for(let i = 0; i < data.length; i++){
