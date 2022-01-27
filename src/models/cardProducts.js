@@ -24,7 +24,7 @@ KenzieFood.getPublic().then(data => {
         itensNoCarrinho.push(data[i])
         cartFooter(itensNoCarrinho)
         localStorage.setItem('carrinho', JSON.stringify(itensNoCarrinho));
-        ColocarItensNoCarrinhoDeCompra()   
+        ColocarItensNoCarrinhoDeCompra()
         });
     }
 })
@@ -130,11 +130,9 @@ class CardProduto {
 
     cardConstrutor(){
         let produtoBox = document.createElement("div");
-        produtoBox.id  = "produtoBox";
         produtoBox.classList.add('produtoBox');
 
         let imgBox = document.createElement("img");
-        imgBox.id  = "pizza";
         imgBox.src = this.imagem;
         imgBox.classList.add('imgBox');
 
@@ -144,17 +142,14 @@ class CardProduto {
         produtoType.classList.add(`type_${this.categoria}`);
         
         let produtoNome       = document.createElement("h2");
-        produtoNome.id        = "produtoNome";
         produtoNome.innerText = `${this.nome}`;
         produtoNome.classList.add("produtoNome");
         
         let produtoDescricao       = document.createElement("h2");
-        produtoDescricao.id        = "produtoDescricao"
         produtoDescricao.innerText = `${this.descricao}`;
         produtoDescricao.classList.add("produtoDescricao");
 
         let produtoPreco       = document.createElement("h2");
-        produtoPreco.id        = "produtoPreco";
         produtoPreco.innerText = `R$ ${this.preco.toFixed(2).toString().replace(".", ",")}`;
         produtoPreco.classList.add("produtoPreco");
 
@@ -193,23 +188,23 @@ function ColocarItensNoCarrinhoDeCompra() {
     BoExcluir.appendChild(imgExcluir)
 
     BoExcluir.addEventListener("click", (evt) => {
-      let x = evt.target
-      if(x.tagName === "BUTTON"){
-        let y = x.parentNode
-        let filhodox = y.childNodes[1].childNodes[0].innerText
+      let botaoExcluir = evt.target
+      if(botaoExcluir.tagName === "BUTTON"){
+        let elementoSelecionado = botaoExcluir.parentNode
+        let nomeProduto = elementoSelecionado.childNodes[1].childNodes[0].innerText
         
-        let index = itensNoCarrinho.indexOf(itensNoCarrinho.find(e => e.nome === filhodox))
+        let index = itensNoCarrinho.indexOf(itensNoCarrinho.find(e => e.nome === nomeProduto))
         itensNoCarrinho.splice(index, 1)
         ColocarItensNoCarrinhoDeCompra()
         cartFooter(itensNoCarrinho)
         localStorage.setItem('carrinho', JSON.stringify(itensNoCarrinho));
         carrinhoVazio()
       } else {
-        let x = evt.target.parentNode.parentNode
-        let filhodox = x.childNodes[1].childNodes[0].innerText;
+        let imgExcluir = evt.target.parentNode.parentNode
+        let nomeProduto = imgExcluir.childNodes[1].childNodes[0].innerText;
 
         let index = itensNoCarrinho.indexOf(
-          itensNoCarrinho.find((e) => e.nome === filhodox)
+          itensNoCarrinho.find((e) => e.nome === nomeProduto)
         );
         itensNoCarrinho.splice(index, 1);
         ColocarItensNoCarrinhoDeCompra();
