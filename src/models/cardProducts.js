@@ -1,4 +1,5 @@
 import { KenzieFood } from "../controllers/ifome-controler.js";
+import { cartFooter } from "../controllers/ifome-priceCount-itensCount.js";
 
 const itensNoCarrinho = [];
 const salvaProdutos = [];
@@ -13,6 +14,7 @@ KenzieFood.getPublic().then(data => {
         const botao = document.getElementsByClassName("addBtn")[i]
         botao.addEventListener("click", () => {
         itensNoCarrinho.push(data[i])
+        cartFooter(itensNoCarrinho)
         ColocarItensNoCarrinhoDeCompra()       
         });
     }
@@ -41,6 +43,7 @@ function interceptadorMenuNavegacao(evento){
                 const botao = document.getElementsByClassName("addBtn")[i]
                 botao.addEventListener("click", () => {
                 itensNoCarrinho.push(criandoProduto)
+                cartFooter(itensNoCarrinho)
                 ColocarItensNoCarrinhoDeCompra()        
                 });
             }     
@@ -56,6 +59,7 @@ function interceptadorMenuNavegacao(evento){
                 const botao = document.getElementsByClassName("addBtn")[i]
                 botao.addEventListener("click", () => {
                     itensNoCarrinho.push(criandoProduto)
+                    cartFooter(itensNoCarrinho)
                     ColocarItensNoCarrinhoDeCompra()        
                 });
             }    
@@ -79,6 +83,7 @@ function pesquisarProduto() {
             const botao = document.getElementsByClassName("addBtn")[i]
             botao.addEventListener("click", () => {
             itensNoCarrinho.push(criandoProduto)
+            cartFooter(itensNoCarrinho)
             ColocarItensNoCarrinhoDeCompra()        
             });
         }
@@ -89,7 +94,8 @@ function pesquisarProduto() {
             const botao = document.getElementsByClassName("addBtn")[i]
                 botao.addEventListener("click", () => {
                 itensNoCarrinho.push(criandoProduto)
-                ColocarItensNoCarrinhoDeCompra()        
+                cartFooter(itensNoCarrinho)
+                ColocarItensNoCarrinhoDeCompra()       
                 });
         }
     }
@@ -136,7 +142,7 @@ class CardProduto {
 
         let produtoPreco       = document.createElement("h2");
         produtoPreco.id        = "produtoPreco";
-        produtoPreco.innerText = `${this.preco}`;
+        produtoPreco.innerText = `R$ ${this.preco.toFixed(2).toString().replace(".", ",")}`;
         produtoPreco.classList.add("produtoPreco");
 
         let addBtn = document.createElement("button");
@@ -181,6 +187,7 @@ function ColocarItensNoCarrinhoDeCompra() {
         let index = itensNoCarrinho.indexOf(itensNoCarrinho.find(e => e.nome === filhodox))
         itensNoCarrinho.splice(index, 1)
         ColocarItensNoCarrinhoDeCompra()
+        cartFooter(itensNoCarrinho)
         carrinhoVazio()
       } else {
         let x = evt.target.parentNode.parentNode
@@ -191,6 +198,7 @@ function ColocarItensNoCarrinhoDeCompra() {
         );
         itensNoCarrinho.splice(index, 1);
         ColocarItensNoCarrinhoDeCompra();
+        cartFooter(itensNoCarrinho)
         carrinhoVazio();
       }
     })
@@ -244,7 +252,8 @@ function carrinhoVazio() {
 }
 
 carrinhoVazio()
+cartFooter(itensNoCarrinho)
 // pesquisarProduto()
 
-
 export{CardProduto};
+

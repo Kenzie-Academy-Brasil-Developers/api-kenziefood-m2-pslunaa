@@ -48,6 +48,10 @@ header {
     cursor: pointer;
 }
 
+.carrinho{
+    width: 343px;
+}
+
 #pesquisar:hover{
     background-color: #FF2253;
 }
@@ -151,8 +155,9 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 400px;
+    height: 405px;
     flex-direction: column;
+    overflow-y: scroll;
 }
 
 .styleCarrinhoVazio {
@@ -259,11 +264,11 @@ h3 {
 
     .carrinho {
     padding-top: 58px;
-    width: 345px;
+    width: 319px;
     min-height: 503.48px;
     margin-left: 73px;
     height: auto;
-}
+    }
 
     .container{
         overflow-x: hidden;
@@ -271,7 +276,6 @@ h3 {
         grid-template-columns: auto auto auto;
         height: auto;
         width: 977px;
-
     }
 
     main {
@@ -300,6 +304,11 @@ h3 {
         margin-top: 21px;        
     }
 
+    #itens{
+        overflow-y: hidden;
+        height: auto;
+        min-height: 405px;
+    }
     #campo-pesquisa{
         margin-right: 115px;
     }
