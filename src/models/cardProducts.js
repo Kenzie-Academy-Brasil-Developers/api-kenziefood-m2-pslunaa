@@ -29,7 +29,21 @@ KenzieFood.getPublic().then(data => {
     }
 })
 
-
+KenzieFood.getPrivate().then(data => {
+    if(data.length !== 0){
+        data.forEach(element => {
+            salvaProdutos = [...salvaProdutos, element];
+            let criaProduto = new CardProduto(data[i]);
+            criaProduto.cardConstrutor();
+            const botao = document.getElementsByClassName("addBtn")[i]
+            botao.addEventListener("click", () => {
+            itensNoCarrinho.push(data[i])
+            ColocarItensNoCarrinhoDeCompra()       
+            });
+        });
+        
+    }
+})
 
 //Variaveis Globais
 let termo = document.getElementById("campoPesquisa")
