@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="modal.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./src/assets/css/modal.css">
+    <title>ADM - Kenzie Food</title>
 </head>
 <body>
     <section class="form">
@@ -13,12 +13,12 @@
         <button class="post formBtn">adicionar produto</button>
             <section class="modal-post">
                 <form class="mod-post">
-                    <button class="fechar">x</button>
+                    <span id="queroFecharPost" class="fechar">x</span>
                     <img class="post-logo" src="imagens/Group 1030.png" alt="Logo-Food1">
-                    <input type="text" name="nome" id="nome" placeholder="Produto" />
-                    <input type="text" name="descricao" id="descricao" placeholder="Descrição" />
-                    <input type="text" name="preco" id="preco" placeholder="Preço" />
-                    <select class="categoria" name="categorias">
+                    <input type="text" name="nome" id="nomePost" placeholder="Produto" />
+                    <input type="text" name="descricao" id="descricaoPost" placeholder="Descrição" />
+                    <input type="text" name="preco" id="precoPost" placeholder="Preço" />
+                    <select class="categoria" name="categorias" id="categoriaPost">
                         <option value="panificadora">Panificadora</option>
                         <option value="frutas">Frutas</option>
                         <option value="bebidas">Bebidas</option>
@@ -29,24 +29,24 @@
         <button class="patch formBtn">modificar produto</button>
             <section class="modal-patch">
                 <form class="mod-patch">
-                    <button class="fechar">x</button>
+                    <span id="queroFecharPatch" class="fechar">x</span>
                     <img class="post-logo" src="imagens/Group 1030.png" alt="Logo-Food1">
-                        <input type="text" name="nome" id="nome" placeholder="Produto" />
-                        <input type="text" name="nome" id="nome" placeholder="Produto-id" />
-                        <input type="text" name="descricao" id="descricao" placeholder="Descrição" />
-                        <input type="text" name="preco" id="preco" placeholder="Preço" />
-                        <input type="text" name="imagem" id="imagem" placeholder="imagem" />
-                        <button type="submit">Submeter</button>
+                        <input type="text" name="produto-patch" id="produto-patch" placeholder="Produto" />
+                        <input type="text" name="produto-id-patch" id="produto-id-patch" placeholder="Produto-id" />
+                        <input type="text" name="descricao-patch" id="descricao-patch" placeholder="Descrição" />
+                        <input type="text" name="preco-patch" id="preco-patch" placeholder="Preço" />
+                        <input type="text" name="imagem-patch" id="imagem-patch" placeholder="imagem" />
+                        <button id="patch" type="submit">Submeter</button>
                         </div>
                 </form>
             </section>
         <button class="delete formBtn">deletar produto</button>
             <section class="modal-delete">
                 <form class="mod-delete">
-                    <button class="fechar">x</button>
+                    <span id="queroFecharDelete" class="fechar">x</span>
                     <img class="post-logo" src="imagens/Group 1030.png" alt="Logo-Food1">
-                    <input type="text" name="nome" id="nome" placeholder="Produto-id" />
-                    <button type="submit">Deletar</button>
+                    <input type="text" name="produto-id-delete" id="IDDelete" placeholder="Produto-id" />
+                    <button id="delete" type="submit">Deletar</button>
                 </form>
             </section>
             
@@ -111,6 +111,6 @@
             </form>
         </div>
     </div>
-  <script src="./modal.js"></script>  
+  <script src="./src/assets/js/modal.js"></script>  
 </body>
 </html>
