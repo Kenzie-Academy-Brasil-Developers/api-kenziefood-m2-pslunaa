@@ -282,4 +282,5 @@ cartFooter(itensNoCarrinho)
 
 export{CardProduto};
 
+
 // LocalStorage
