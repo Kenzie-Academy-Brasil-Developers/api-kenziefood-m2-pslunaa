@@ -1,0 +1,183 @@
+.formBtn{
+    margin-bottom: 20px;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*modais formulario-------------------------------------------------------------------------------------------------------*/
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    height: 600px;
+    width: 320px;
+    background-color: #F8F9FA;
+    border-radius: 30px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 4);
+}
+.form-logo{
+    width: 123px;
+    margin-bottom: 225px;
+}
+.post-logo{
+    width: 123px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*modais principais css----------------------------------------------------------------------------------------------------*/
+.modal-post,.modal-patch,.modal-delete{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s opacity 0,5;
+}
+.mod-post-active,.mod-patch-active,.mod-delete-active{
+    visibility: visible;
+    opacity: 1;
+}
+.mod-post,.mod-patch,.mod-delete{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 320px;
+    padding: 10px;
+    border-radius: 30px;
+}
+.mod-post,.mod-patch{
+    height: 500px;
+}
+.mod-delete{
+    height: 200px;
+}
+.mod-alteracao{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: space-evenly;
+}
+
+/*modais de resposta css-----------------------------------------------------------------------------------------*/
+.respostas{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 320px;
+    border-radius: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mod-addSucess,.mod-addFail,.mod-getToPatchFail,.mod-patchSucess,.mod-patchFail,.mod-deleteConfirm,.mod-deleteSucess,.mod-deleteFail{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 320px;
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+    background-color: #F8F9FA;
+}
+/*sucess background*/
+.mod-addSucess h3,.modal-patchSucess h3,.mod-deleteSucess h3{
+    background-color: rgb(48, 255, 21);
+    border-radius: 10px;
+    height: 50px;
+    padding: 10px;
+}
+/*fail background*/
+.mod-addFail h3,.mod-getToPatchFail h3,.mod-patchFail h3,.mod-deleteFail h3{
+    background-color: rgb(255, 21, 21);
+    border-radius: 10px;
+    height: 50px;
+    padding: 10px;
+}
+/*modais gerais css ---------------------------------------------------------------------------------------------*/
+button:not(.fechar) {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+button:hover {
+    background-color: #42fc13;
+    box-shadow: 0px 15px 20px rgba(82, 255, 29, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+    font-weight: 900;
+}
+button:active {
+    transform: translateY(-1px);
+}
+.fechar{
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    width: 20px;
+    position: relative;
+    left: 300px;
+}
+.fechar:hover {
+    background-color: #fc1313;
+    box-shadow: 0px 15px 20px rgba(255, 0, 0, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+.fechar:active {
+    transform: translateY(-1px);
+}
+input,select{
+    padding: 3px;
+    font-size: 19px;
+    border-width: 0px;
+    border-color: #000000;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-style: solid;
+    border-radius: 12px;
+    box-shadow: 4px 2px 9px rgba(253, 23, 23, 0.75);
+    font-weight: 100;
+}
+input:focus,select:focus {
+    outline:none;
+    box-shadow: 4px 2px 9px rgba(9, 245, 29, 0.75);
+}
+input:hover,select:hover {
+    box-shadow: 4px 2px 9px rgba(9, 245, 29, 0.75);
+    transition: 1.5s;
+}
+.removeNo:hover{
+    background-color: #fc1313;
+}
