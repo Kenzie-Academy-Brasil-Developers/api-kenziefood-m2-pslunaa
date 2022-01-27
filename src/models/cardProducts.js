@@ -1,8 +1,16 @@
 import { KenzieFood } from "../controllers/ifome-controler.js";
 import { cartFooter } from "../controllers/ifome-priceCount-itensCount.js";
 
-const itensNoCarrinho = [];
+
+function storage (){
+    return JSON.parse(localStorage.getItem('carrinho'));
+}
+
+let carrinho = storage();
+
+let itensNoCarrinho = (carrinho !== null) ? carrinho : [];
 const salvaProdutos = [];
+ColocarItensNoCarrinhoDeCompra()
 
 //Consumindo API e salvando itens num array;
 
@@ -15,7 +23,8 @@ KenzieFood.getPublic().then(data => {
         botao.addEventListener("click", () => {
         itensNoCarrinho.push(data[i])
         cartFooter(itensNoCarrinho)
-        ColocarItensNoCarrinhoDeCompra()       
+        localStorage.setItem('carrinho', JSON.stringify(itensNoCarrinho));
+        ColocarItensNoCarrinhoDeCompra()   
         });
     }
 })
@@ -44,6 +53,7 @@ function interceptadorMenuNavegacao(evento){
                 botao.addEventListener("click", () => {
                 itensNoCarrinho.push(criandoProduto)
                 cartFooter(itensNoCarrinho)
+                localStorage.setItem('carrinho', JSON.stringify(itensNoCarrinho));
                 ColocarItensNoCarrinhoDeCompra()        
                 });
             }     
@@ -60,6 +70,7 @@ function interceptadorMenuNavegacao(evento){
                 botao.addEventListener("click", () => {
                     itensNoCarrinho.push(criandoProduto)
                     cartFooter(itensNoCarrinho)
+                    localStorage.setItem('carrinho', JSON.stringify(itensNoCarrinho));
                     ColocarItensNoCarrinhoDeCompra()        
                 });
             }    
@@ -84,6 +95,7 @@ function pesquisarProduto() {
             botao.addEventListener("click", () => {
             itensNoCarrinho.push(criandoProduto)
             cartFooter(itensNoCarrinho)
+            localStorage.setItem('carrinho', JSON.stringify(itensNoCarrinho));
             ColocarItensNoCarrinhoDeCompra()        
             });
         }
@@ -95,6 +107,7 @@ function pesquisarProduto() {
                 botao.addEventListener("click", () => {
                 itensNoCarrinho.push(criandoProduto)
                 cartFooter(itensNoCarrinho)
+                localStorage.setItem('carrinho', JSON.stringify(itensNoCarrinho));
                 ColocarItensNoCarrinhoDeCompra()       
                 });
         }
@@ -159,6 +172,7 @@ class CardProduto {
 }
 
 function ColocarItensNoCarrinhoDeCompra() {
+  let itens = document.getElementById("itens");
   itens.innerHTML = "";
 
   for (let i = 0; i < itensNoCarrinho.length; i++) {
@@ -188,6 +202,7 @@ function ColocarItensNoCarrinhoDeCompra() {
         itensNoCarrinho.splice(index, 1)
         ColocarItensNoCarrinhoDeCompra()
         cartFooter(itensNoCarrinho)
+        localStorage.setItem('carrinho', JSON.stringify(itensNoCarrinho));
         carrinhoVazio()
       } else {
         let x = evt.target.parentNode.parentNode
@@ -199,6 +214,7 @@ function ColocarItensNoCarrinhoDeCompra() {
         itensNoCarrinho.splice(index, 1);
         ColocarItensNoCarrinhoDeCompra();
         cartFooter(itensNoCarrinho)
+        localStorage.setItem('carrinho', JSON.stringify(itensNoCarrinho));
         carrinhoVazio();
       }
     })
@@ -231,7 +247,7 @@ function ColocarItensNoCarrinhoDeCompra() {
   }
 }
 
-const itens = document.getElementById("itens");
+
 
 function carrinhoVazio() {
   if (itensNoCarrinho.length === 0) {
@@ -257,3 +273,4 @@ cartFooter(itensNoCarrinho)
 
 export{CardProduto};
 
+// LocalStorage
