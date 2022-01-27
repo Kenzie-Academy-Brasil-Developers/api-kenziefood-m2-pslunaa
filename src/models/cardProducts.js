@@ -10,7 +10,7 @@ let carrinho = storage();
 
 let itensNoCarrinho = (carrinho !== null) ? carrinho : [];
 const salvaProdutos = [];
-ColocarItensNoCarrinhoDeCompra()
+
 
 //Consumindo API e salvando itens num array;
 
