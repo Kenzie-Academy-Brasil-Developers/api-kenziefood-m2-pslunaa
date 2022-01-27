@@ -9,22 +9,6 @@ const queroFecharPost = document.getElementById("queroFecharPost");
 const queroFecharPatch = document.getElementById("queroFecharPatch");
 const queroFecharDelete = document.getElementById("queroFecharDelete");
 
-//inputs Posts
-const nomePost = document.getElementById("nomePost");
-const descricaoPost = document.getElementById("descricaoPost");
-const precoPost = document.getElementById("precoPost");
-const categoriaPost = document.getElementById("categoriaPost");
-
-//inputs Patch
-const produtoPatch = document.getElementById("produto-patch"); 
-const produtoIdPatch = document.getElementById("produto-id-patch"); 
-const descricaoPatch = document.getElementById("descricao-patch"); 
-const precoPatch = document.getElementById("preco-patch"); 
-const imagemPatch = document.getElementById("imagem-patch"); 
-
-//input Delete
-const IDDelete = document.getElementById("IDDelete");
-
 queroFecharPost.addEventListener("click", () => {
     modalPost.classList.remove('mod-post-active');
 })
