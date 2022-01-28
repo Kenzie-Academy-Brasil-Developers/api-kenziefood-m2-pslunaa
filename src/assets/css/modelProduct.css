@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@300&display=swap');
+
+.produtoBox{
+    height: 369px;
+    width: 300px;
+    margin-bottom: 94px;
+}
+
+.imgBox{
+    height: 194px;
+    width: 294px;
+    border-radius: 5px;
+    border: 3px solid #FFE9EE;
+}
+.imgBox:hover{
+    border: 3px solid #FF2253;
+}
+.type_Panificadora,.type_Frutas,.type_Bebidas{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 18px;
+    background: #FFE9EE;
+    border-radius: 30px;
+    flex: none;
+    margin: 10px 0px;
+    height: 30px;
+    width: 132.08824157714844px;
+    position:relative; 
+    top:-35px; 
+    left:10px;
+    font-family: "Poppins";
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.type_Panificadora{
+    background-image: url("../imagens/Icon_bread.png");
+    background-repeat: no-repeat;
+    background-position: 20px;
+    background-size: 19px;
+}
+.type_Frutas{
+    background-image: url("../imagens/Icon_fruits.png");
+    background-repeat: no-repeat;
+    background-position: 20px;
+    background-size: 19px;
+}
+.type_Bebidas{
+    background-image: url("../imagens/Icon_glass\ of\ wine.png");
+    background-repeat: no-repeat;
+    background-position: 20px;
+    background-size: 19px;
+}
+.produtoNome{
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 27px;
+    color: #000000;
+    font-weight: 700;
+    letter-spacing: 0em;
+    text-align: left;
+    position: relative;
+    top:-35px;
+    left:0px;
+}
+.produtoDescricao{
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    top:-35px;
+    left:0px;
+}
+.produtoPreco{
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 13px;
+    color: #212529;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.addBtn{
+    position: relative;
+    top: -24px;
+    left: 258px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border-style: none;
+    background: #E4F7EF;
+    background-image: url("../imagens/Button\ Circle.png");
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .produtoBox {
+        margin-bottom: 90px;
+    }
+}
+.addBtn:hover{
+    background-image: url("../imagens/Property\ 1=Hover.png");
+}

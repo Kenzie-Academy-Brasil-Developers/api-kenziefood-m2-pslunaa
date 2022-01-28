@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/assets/css/modal.css">
+    <title>ADM - Kenzie Food</title>
+</head>
+<body>
+    <a href="./index.html">Voltar para Kenzie Food</a>
+    <section class="form">
+        <img class="form-logo" src="./imagens/Group 1030.png" alt="Logo-Food1">
+        <button class="post formBtn">adicionar produto</button>
+            <section class="modal-post">
+                <form class="mod-post">
+                    <span id="queroFecharPost" class="fechar">x</span>
+                    <img class="post-logo" src="./imagens/Group 1030.png" alt="Logo-Food1">
+                    <input type="text" name="nome" id="nomePost" placeholder="Produto" />
+                    <input type="text" name="descricao" id="descricaoPost" placeholder="Descrição" />
+                    <input type="number" name="preco" id="precoPost" placeholder="Preço" />
+                    <select class="categoria" name="categoria" id="categoriaPost">
+                        <option value="panificadora">Panificadora</option>
+                        <option value="frutas">Frutas</option>
+                        <option value="bebidas">Bebidas</option>
+                    </select>
+                    <button type="submit">Submeter</button>
+                </form>
+            </section>
+        <button class="patch formBtn">modificar produto</button>
+            <section class="modal-patch">
+                <form class="mod-patch">
+                    <span id="queroFecharPatch" class="fechar">x</span>
+                    <img class="post-logo" src="./imagens/Group 1030.png" alt="Logo-Food1">
+                        <input type="text" name="produto-patch" id="produto-patch" placeholder="Produto" />
+                        <input type="text" name="produto-id-patch" id="produto-id-patch" placeholder="Produto-id" />
+                        <input type="text" name="descricao-patch" id="descricao-patch" placeholder="Descrição" />
+                        <input type="number" name="preco-patch" id="preco-patch" placeholder="Preço" />
+                        <input type="text" name="imagem-patch" id="imagem-patch" placeholder="imagem" />
+                        <button id="patch" type="submit">Submeter</button>
+                        </div>
+                </form>
+            </section>
+        <button class="delete formBtn">deletar produto</button>
+            <section class="modal-delete">
+                <form class="mod-delete">
+                    <span id="queroFecharDelete" class="fechar">x</span>
+                    <img class="post-logo" src="./imagens/Group 1030.png" alt="Logo-Food1">
+                    <input type="number" name="id" id="IDDelete" placeholder="Produto-id" />
+                    <button id="delete" type="submit">Deletar</button>
+                </form>
+            </section>
+            
+    </section>
+    <div class="respostas">
+        <div class="modal-addSucess">
+            <form class="mod-addSucess">
+                <button class="fechar">x</button>
+                <img class="post-logo" src="./imagens/Group 1030.png" alt="Logo-Food1">
+                <h3>Produto Adicionado com sucesso,Parabens!!!</h3>
+            </form>
+        </div>
+        <div class="modal-addFail">
+            <form class="mod-addFail">
+                <button class="fechar">x</button>
+                <img class="post-logo" src="./imagens/Group 1030.png" alt="Logo-Food1">
+                <h3>Infelizmente houve um erro ao adicionar,contatar suporte!!!</h3>
+            </form>
+        </div>
+        <div class="modal-getToPatchFail">
+            <form class="mod-getToPatchFail">
+                <button class="fechar">x</button>
+                <img class="post-logo" src="./imagens/Group 1030.png" alt="Logo-Food1">
+                <h3>infelizmente não encontramos o ID!</h3>
+            </form>
+        </div>
+        <div class="modal-patchSucess">
+            <form class="mod-patchSucess">
+                <button class="fechar">x</button>
+                <img class="post-logo" src="./imagens/Group 1030.png" alt="Logo-Food1">
+                <h3>Produto modificado com sucesso!</h3>
+            </form>
+        </div>
+        <div class="modal-patchFail">
+            <form class="mod-patchFail">
+                <button class="fechar">x</button>
+                <img class="post-logo" src="./imagens/Group 1030.png" alt="Logo-Food1">
+                <h3>Infelizmente houve um erro ao modificar,contatar suporte!!!</h3>
+            </form>
+        </div>
+        <div class="modal-deleteConfirm">
+            <form class="mod-deleteConfirm">
+                <button class="fechar">x</button>
+                <img class="post-logo" src="./imagens/Group 1030.png" alt="Logo-Food1">
+                <h3>tem certeza que queres remover este item?</h3>
+                <button class="removeYes">sim</button>
+                <button class="removeNo">não</button>
+            </form>
+        </div>
+        <div class="modal-deleteSucess">
+            <form class="mod-deleteSucess">
+                <button class="fechar">x</button>
+                <img class="post-logo" src="./imagens/Group 1030.png" alt="Logo-Food1">
+                <h3>Produto removido com sucesso!</h3>
+            </form>
+        </div>
+        <div class="modal-deleteFail">
+            <form class="mod-deleteFail">
+                <button class="fechar">x</button>
+                <img class="post-logo" src="./imagens/Group 1030.png" alt="Logo-Food1">
+                <h3>Infelizmente houvee um erro ao deletar,contatar suporte!!!</h3>
+            </form>
+        </div>
+    </div>
+    
+    <script type="module" src="./src/assets/js/modal.js"></script>
+</body>
+</html>

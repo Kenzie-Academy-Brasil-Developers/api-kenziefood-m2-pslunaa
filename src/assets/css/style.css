@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.espacamentoLixeira{
+    padding-right: 76px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+a{
+    margin: 40px;
+    color: black;
+    text-decoration: none;
+    height: 20px;
+}
+a:hover{
+    background-color: black;
+    color: white; 
+    opacity: 0.75;
+    border-radius: 5px;
+}
+
+#logo {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#nome-logo {
+    width: 123px;
+    height: 46px;
+    margin: 21px 0px 20px 0px;
+}
+
+#campo-pesquisa {
+    display: flex;
+    justify-content: center;
+}
+
+#campoPesquisa {
+    width: 343px;
+    height: 54.04px;
+    border: unset;
+    border-radius: 33.09px;
+    background-color: #F8F9FA;
+    font-size: 14.71px;
+    color: #868E96;
+    padding-left: 15px;
+}
+
+#pesquisar {
+    position: absolute;
+    width: 44.12px;
+    height: 44.12px;
+    background-color: #FFE9EE;
+    border: unset;
+    border-radius: 30px;
+    margin-top: 6px;
+    margin-left: 250px;
+    cursor: pointer;
+}
+
+.carrinho{
+    width: 100%;
+    max-width: 343px;
+}
+
+#pesquisar:hover{
+    background-color: #FF2253;
+}
+
+#pesquisar:hover #lupa {
+    filter: invert(1%) sepia(1%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(80%);
+}
+
+.categorias {
+    padding-bottom: 27px;
+    margin-left: 18px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: left;
+    justify-content: space-between;
+    max-width: 500px;
+    overflow-x: scroll;
+}
+
+.botaoNavTodos{
+    font-family: "Inter";
+    padding: 15px 11.5px;
+    border-radius: 30px;
+    border: white;
+    font-size: 14px;
+    border: 0.1px transparent;
+}
+
+.botaoNavTodos:hover {
+    cursor: pointer;
+    border: black 0.1px solid;
+}
+
+.botaoNav {
+    font-size: 14px;
+    border-radius: 30px;
+    padding: 11.5px 15px 11.5px 0px;
+    border: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0px 11px;
+    border: 0.1px transparent;
+}
+
+.botaoNav:hover {
+    cursor: pointer;
+    border: black 0.1px solid;
+}
+
+.imagemNav {
+    margin: 0px 15px;
+    width: 19px;
+}
+
+#botaoNav1 {
+    background-color: #FFF7F4;
+}
+
+#botaoNav2 {
+    background-color: #FFE4EA;
+}
+
+#botaoNav3 {
+    background-color: #F3EEF5;
+}
+
+
+.separarNoCarrinho {
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrinhoParteSuperior {
+    border-radius: 15.0938px 15.0938px 0px 0px;
+    background-color: #FF2253;
+    width: 100%;
+    max-width: 345px;
+    height: 60.38px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.carrinhoParteSuperior img{
+    width: 15.09px;
+    height: 15.09px;
+    margin-left: 23px;
+    margin-right: 20px;
+}
+
+.carrinhoParteSuperior title1 {
+    font-family: 'Poppins';
+    color: white;
+    font-weight: bold;
+}
+
+#itens {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 405px;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.styleCarrinhoVazio {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.styleCarrinhoVazio div {
+    margin: 20px 0px 20px 0px;
+    font-size: 12.82px;
+    color: #868E96;
+    font-family: 'Poppins';
+    font-weight: 700;
+}
+
+.styleCarrinhoVazio section {
+    font-size: 12.82px;
+    font-family: 'Poppins';
+    width: 200px;
+    text-align: center;
+    color: #868E96;
+}
+
+.itensParaComprarStyle{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    width: 300px;
+}
+
+.tamanhoDosProdutos {
+    width: 75.47px;
+    height: 75.47px;
+}
+
+.textosNoCarrinho {
+    text-align: left;
+}
+
+.textosNoCarrinho h2 {
+    margin: 5px 0px;
+}
+
+.itensParaComprarStyle img {
+    margin: 0px 13px;
+    border-radius: 8.6px;
+}
+
+h2 {
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 700;
+    color: #000000;
+}
+
+h3 {
+    color: #868E96;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.textosNoCarrinho p {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 12px;
+    color: #212529;
+    margin-top: 7.88px;
+}
+
+.container {
+    display: flex;
+    overflow-x: scroll;
+    height: 400px;
+    margin-left: 16px;
+}
+
+.carrinhoMobile{
+    display: flex;
+    justify-content: center;
+}
+
+.excluir {
+    margin-left: 3px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: #F8F9FA;
+    border-radius: 4px;
+}
+
+.excluir:hover {
+    background-color: #868E96;
+}
+
+.excluir:hover .imgExcluir{
+    filter: invert(1%) sepia(1%) saturate(1%) hue-rotate(1deg) brightness(1000%) contrast(80%);
+}
+
+@media (min-width: 768px) {
+
+    main {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .carrinho {
+    padding-top: 58px;
+    width: 319px;
+    min-height: 503.48px;
+    margin-left: 73px;
+    height: auto;
+    }
+
+    .container{
+        overflow-x: hidden;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        height: auto;
+        width: 977px;
+    }
+
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1600px;
+        height: 80px;
+        box-shadow: 0px 0px 40px -20px rgba(0, 0, 0, 0.25);
+    }
+
+    #nome-logo {
+        margin-left: 116px;
+    }
+
+    #campoPesquisa {
+        width: 311px;
+        height: 49px;
+        border: unset;
+        border-radius: 30px;
+        margin-top: 21px;        
+    }
+
+    #itens{
+        overflow-y: hidden;
+        height: auto;
+        min-height: 405px;
+    }
+    #campo-pesquisa{
+        margin-right: 115px;
+    }
+
+    #pesquisar {
+        margin-top: 24px;
+    }
+
+}
+
+@media (min-width: 600px) {
+    .categorias {
+        padding-bottom: 58px;
+        overflow-x: hidden;
+    }
+}
+
+ 
