@@ -10,7 +10,7 @@ let carrinho = storage();
 
 let itensNoCarrinho = (carrinho !== null) ? carrinho : [];
 let salvaProdutos = [];
-
+ColocarItensNoCarrinhoDeCompra();
 
 //Consumindo API e salvando itens num array;
 
@@ -230,6 +230,7 @@ function ColocarItensNoCarrinhoDeCompra() {
     })
 
     const divisao = document.createElement("section");
+    divisao.classList.add("espacamentoLixeira")
 
     const nomeDaComida = document.createElement("h2");
     nomeDaComida.innerText = itensNoCarrinho[i].nome;
