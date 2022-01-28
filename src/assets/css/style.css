@@ -187,6 +187,8 @@ header {
     display: flex;
     flex-direction: row;
     margin: 10px;
+    width: 300px;
+    justify-content: space-between;
 }
 
 .tamanhoDosProdutos {
