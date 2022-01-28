@@ -18,8 +18,8 @@
                     <img class="post-logo" src="imagens/Group 1030.png" alt="Logo-Food1">
                     <input type="text" name="nome" id="nomePost" placeholder="Produto" />
                     <input type="text" name="descricao" id="descricaoPost" placeholder="Descrição" />
-                    <input type="text" name="preco" id="precoPost" placeholder="Preço" />
-                    <select class="categoria" name="categorias" id="categoriaPost">
+                    <input type="number" name="preco" id="precoPost" placeholder="Preço" />
+                    <select class="categoria" name="categoria" id="categoriaPost">
                         <option value="panificadora">Panificadora</option>
                         <option value="frutas">Frutas</option>
                         <option value="bebidas">Bebidas</option>
@@ -35,7 +35,7 @@
                         <input type="text" name="produto-patch" id="produto-patch" placeholder="Produto" />
                         <input type="text" name="produto-id-patch" id="produto-id-patch" placeholder="Produto-id" />
                         <input type="text" name="descricao-patch" id="descricao-patch" placeholder="Descrição" />
-                        <input type="text" name="preco-patch" id="preco-patch" placeholder="Preço" />
+                        <input type="number" name="preco-patch" id="preco-patch" placeholder="Preço" />
                         <input type="text" name="imagem-patch" id="imagem-patch" placeholder="imagem" />
                         <button id="patch" type="submit">Submeter</button>
                         </div>
@@ -46,7 +46,7 @@
                 <form class="mod-delete">
                     <span id="queroFecharDelete" class="fechar">x</span>
                     <img class="post-logo" src="imagens/Group 1030.png" alt="Logo-Food1">
-                    <input type="text" name="produto-id-delete" id="IDDelete" placeholder="Produto-id" />
+                    <input type="number" name="id" id="IDDelete" placeholder="Produto-id" />
                     <button id="delete" type="submit">Deletar</button>
                 </form>
             </section>
@@ -112,6 +112,7 @@
             </form>
         </div>
     </div>
-  <script src="./src/assets/js/modal.js"></script>  
+    
+    <script type="module" src="./src/assets/js/modal.js"></script>
 </body>
 </html>

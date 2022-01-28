@@ -9,7 +9,7 @@ function storage (){
 let carrinho = storage();
 
 let itensNoCarrinho = (carrinho !== null) ? carrinho : [];
-const salvaProdutos = [];
+let salvaProdutos = [];
 
 
 //Consumindo API e salvando itens num array;
@@ -31,18 +31,19 @@ KenzieFood.getPublic().then(data => {
 
 KenzieFood.getPrivate().then(data => {
     if(data.length !== 0){
-        data.forEach(element => {
-            salvaProdutos = [...salvaProdutos, element];
+        for(let i = 0; i < data.length; i++){
+            salvaProdutos = [...salvaProdutos, data[i]];
             let criaProduto = new CardProduto(data[i]);
             criaProduto.cardConstrutor();
             const botao = document.getElementsByClassName("addBtn")[i]
             botao.addEventListener("click", () => {
             itensNoCarrinho.push(data[i])
-            ColocarItensNoCarrinhoDeCompra()       
+            cartFooter(itensNoCarrinho)
+            localStorage.setItem('carrinho', JSON.stringify(itensNoCarrinho));
+            ColocarItensNoCarrinhoDeCompra()
             });
-        });
-        
-    }
+        }
+    }    
 })
 
 //Variaveis Globais
